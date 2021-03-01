@@ -13,11 +13,15 @@ void Main()
   MooseSays("I really am enthusiastic");
 
   //moose with question
+ Questions();
+}
+
+void Questions()
+{
   CanadaQuestion();
   EnthusiasticQuestion();
   LoveCSharpQuestion();
   SecretQuestion();
-}
 
 void CanadaQuestion()
 {
@@ -32,59 +36,6 @@ void CanadaQuestion()
   }
 }
 
-void MooseSays(string message)
-{
-  Console.WriteLine($@"
-                                       _.--^^^--,
-                                    .'          `\
-  .-^^^^^^-.                      .'              |
- /          '.                   /            .-._/
-|             `.                |             |
- \              \          .-._ |          _   \
-  `^^'-.         \_.-.     \   `          ( \__/
-        |             )     '=.       .,   \
-       /             (         \     /  \  /
-     /`               `\        |   /    `'
-     '..-`\        _.-. `\ _.__/   .=.
-          |  _    / \  '.-`    `-.'  /
-          \_/ |  |   './ _     _  \.'
-               '-'    | /       \ |
-                      |  .-. .-.  |
-                      \ / o| |o \ /
-                       |   / \   |    {message}
-                      / `^`   `^` \
-                     /             \
-                    | '._.'         \
-                    |  /             |
-                     \ |             |
-                      ||    _    _   /
-                      /|\  (_\  /_) /
-                      \ \'._  ` '_.'
-                       `^^` `^^^`
-    ");
-
-}
-
-bool MooseAsks(string question)
-{
-  Console.Write($"{question} (Y/N): ");
-  string answer = Console.ReadLine().ToLower();
-
-  while (answer != "y" && answer != "n")
-  {
-    Console.WriteLine($"{question} (Y/N): ");
-    answer = Console.ReadLine().ToLower();
-  }
-
-  if (answer == "y")
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
-}
 void EnthusiasticQuestion()
 {
   bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
@@ -122,4 +73,63 @@ void SecretQuestion()
   {
     MooseSays("Oh, no...secrets are the best, I love to share them!");
   }
+}
+
+}
+
+bool MooseAsks(string question)
+{
+  Console.Write($"{question} (Y/N): ");
+  string answer = Console.ReadLine().ToLower();
+
+  while (answer != "y" && answer != "n")
+  {
+    Console.WriteLine($"{question} (Y/N): ");
+    answer = Console.ReadLine().ToLower();
+  }
+
+  if (answer == "y")
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
+
+
+
+void MooseSays(string message)
+{
+  Console.WriteLine($@"
+                                       _.--^^^--,
+                                    .'          `\
+  .-^^^^^^-.                      .'              |
+ /          '.                   /            .-._/
+|             `.                |             |
+ \              \          .-._ |          _   \
+  `^^'-.         \_.-.     \   `          ( \__/
+        |             )     '=.       .,   \
+       /             (         \     /  \  /
+     /`               `\        |   /    `'
+     '..-`\        _.-. `\ _.__/   .=.
+          |  _    / \  '.-`    `-.'  /
+          \_/ |  |   './ _     _  \.'
+               '-'    | /       \ |
+                      |  .-. .-.  |
+                      \ / o| |o \ /
+                       |   / \   |    {message}
+                      / `^`   `^` \
+                     /             \
+                    | '._.'         \
+                    |  /             |
+                     \ |             |
+                      ||    _    _   /
+                      /|\  (_\  /_) /
+                      \ \'._  ` '_.'
+                       `^^` `^^^`
+    ");
+
 }
